@@ -8,8 +8,8 @@ class Address(Base):
     __tablename__ = 'address'
 
     id = Column(BIGINT, nullable=False, primary_key=True)
-    user_id = Column(BIGINT, ForeignKey("user.id", onupdate="NULL", ondelete="NULL"), nullable=True, default=None)
-    order_id = Column(BIGINT, nullable=True, default=None)
+    user_id = Column(BIGINT, ForeignKey("user.id"), nullable=True, default=None)
+    order_id = Column(BIGINT, ForeignKey("order.id"), nullable=True, default=None)
     first_name = Column(VARCHAR, nullable=True, default=None)
     middle_name = Column(VARCHAR, nullable=True, default=None)
     last_name = Column(VARCHAR, nullable=False, default=None)

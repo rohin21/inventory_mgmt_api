@@ -8,7 +8,7 @@ class Order(Base):
     __tablename__ = 'order'
 
     id = Column(BIGINT, nullable=False, primary_key=True)
-    user_id = Column(BIGINT, ForeignKey("user.id", ondelete="NULL", onupdate="NULL"), nullable=False)
+    user_id = Column(BIGINT, ForeignKey("user.id"), nullable=False)
     type = Column(SMALLINT, nullable=False, default=0)
     status = Column(SMALLINT, nullable=False, default=0)
     sub_total = Column(FLOAT, nullable=False, default=0)
