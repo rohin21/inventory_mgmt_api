@@ -1,5 +1,5 @@
 from sqlalchemy import Column, ForeignKey, BIGINT, VARCHAR, TEXT
-from ..conn import Base
+from db.conn import Base
 
 
 class ProductMeta(Base):

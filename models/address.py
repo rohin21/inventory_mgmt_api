@@ -1,7 +1,7 @@
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 from sqlalchemy.sql.expression import text
-from ..conn import Base
-from sqlalchemy import BIGINT, VARCHAR, DATETIME, Column, ForeignKey
+from db.conn import Base
+from sqlalchemy import BIGINT, VARCHAR, Column, ForeignKey
 
 
 class Address(Base):
@@ -21,4 +21,4 @@ class Address(Base):
     province = Column(VARCHAR, nullable=True, default=None)
     country = Column(VARCHAR, nullable=True, default=None)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
-    updated_at = Column(DATETIME, nullable=True, default=None)
+    updated_at = Column(TIMESTAMP, nullable=True, default=None)

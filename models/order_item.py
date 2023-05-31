@@ -1,7 +1,7 @@
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 from sqlalchemy.sql.expression import text
-from ..conn import Base
-from sqlalchemy import BIGINT, VARCHAR, FLOAT, SMALLINT, DATETIME, TEXT, ForeignKey, Column
+from db.conn import Base
+from sqlalchemy import BIGINT, VARCHAR, FLOAT, SMALLINT, TEXT, ForeignKey, Column
 
 
 class OrderItem(Base):
@@ -16,5 +16,5 @@ class OrderItem(Base):
     discount = Column(FLOAT, nullable=False, default=0)
     quantity = Column(SMALLINT, nullable=False, default=0)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
-    updated_at = Column(DATETIME, nullable=True, default=None)
+    updated_at = Column(TIMESTAMP, nullable=True, default=None)
     content = Column(TEXT, nullable=True, default=None)

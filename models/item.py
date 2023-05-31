@@ -1,7 +1,7 @@
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 from sqlalchemy.sql.expression import text
-from ..conn import Base
-from sqlalchemy import BIGINT, VARCHAR, FLOAT, SMALLINT, DATETIME, ForeignKey, Column
+from db.conn import Base
+from sqlalchemy import BIGINT, VARCHAR, FLOAT, SMALLINT, ForeignKey, Column
 
 
 class Item(Base):
@@ -23,4 +23,4 @@ class Item(Base):
     created_by = Column(BIGINT, nullable=False)
     updated_by = Column(BIGINT, default=None)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
-    updated_at = Column(DATETIME, nullable=True, default=None)
+    updated_at = Column(TIMESTAMP, nullable=True, default=None)

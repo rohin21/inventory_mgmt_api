@@ -1,4 +1,4 @@
-from ..conn import Base
+from db.conn import Base
 from sqlalchemy import BIGINT, VARCHAR, TEXT, ForeignKey, Column
 
 

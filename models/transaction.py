@@ -1,7 +1,7 @@
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 from sqlalchemy.sql.expression import text
-from ..conn import Base
-from sqlalchemy import BIGINT, VARCHAR, SMALLINT, DATETIME, TEXT, Column, ForeignKey
+from db.conn import Base
+from sqlalchemy import BIGINT, VARCHAR, SMALLINT, TEXT, Column, ForeignKey
 
 
 class Transaction(Base):
@@ -15,5 +15,5 @@ class Transaction(Base):
     mode = Column(SMALLINT, nullable=False, default=0)
     status = Column(SMALLINT, nullable=False, default=0)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
-    updated_at = Column(DATETIME, nullable=True, default=None)
+    updated_at = Column(TIMESTAMP, nullable=True, default=None)
     content = Column(TEXT, nullable=True, default=None)

@@ -1,7 +1,7 @@
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 from sqlalchemy.sql.expression import text
-from ..conn import Base
-from sqlalchemy import BIGINT, SMALLINT, FLOAT, VARCHAR, DATETIME, TEXT, Column, ForeignKey
+from db.conn import Base
+from sqlalchemy import BIGINT, SMALLINT, FLOAT, VARCHAR, TEXT, Column, ForeignKey
 
 
 class Order(Base):
@@ -20,5 +20,5 @@ class Order(Base):
     discount = Column(FLOAT, nullable=False, default=0)
     grand_total = Column(FLOAT, nullable=False, default=0)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
-    updated_at = Column(DATETIME, nullable=True, default=None)
+    updated_at = Column(TIMESTAMP, nullable=True, default=None)
     content = Column(TEXT, nullable=True, default=None)

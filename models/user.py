@@ -1,7 +1,7 @@
-from sqlalchemy import Column, BIGINT, SMALLINT, VARCHAR, DATETIME, TEXT
+from sqlalchemy import Column, BIGINT, SMALLINT, VARCHAR, TEXT
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 from sqlalchemy.sql.expression import text
-from ..conn import Base
+from db.conn import Base
 
 class User(Base):
     __tablename__ = 'user'
@@ -16,6 +16,6 @@ class User(Base):
     email = Column(VARCHAR, nullable=True, unique=True)
     password_hash = Column(VARCHAR, nullable=False)
     registered_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
-    last_login = Column(DATETIME, nullable=True, default=None)
+    last_login = Column(TIMESTAMP, nullable=True, default=None)
     intro = Column(TEXT, nullable=True, default=None)
     profile = Column(TEXT, nullable=True, default=None)
