@@ -8,10 +8,10 @@ class Item(Base):
     __tablename__ = 'item'
 
     id = Column(BIGINT, nullable=False, primary_key=True)
-    product_id = Column(BIGINT, ForeignKey("product.id"), nullable=False)
-    brand_id = Column(BIGINT, ForeignKey("brand.id"), nullable=False)
-    supplier_id = Column(BIGINT, ForeignKey("user.id"), nullable=False)
-    order_id = Column(BIGINT, ForeignKey("order.id"), nullable=False)
+    product_id = Column(BIGINT, ForeignKey("product.id"), nullable=False, index=True)
+    brand_id = Column(BIGINT, ForeignKey("brand.id"), nullable=False, index=True)
+    supplier_id = Column(BIGINT, ForeignKey("user.id"), nullable=False, index=True)
+    order_id = Column(BIGINT, ForeignKey("order.id"), nullable=False, index=True)
     sku = Column(VARCHAR, nullable=False)
     mrp = Column(FLOAT, nullable=False, default=0)
     discount = Column(FLOAT, nullable=False, default=0)

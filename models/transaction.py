@@ -8,8 +8,8 @@ class Transaction(Base):
     __tablename__ = "transaction"
 
     id = Column(BIGINT, nullable=False, primary_key=True)
-    user_id = Column(BIGINT, ForeignKey("user.id"), nullable=False)
-    order_id = Column(BIGINT, ForeignKey("order.id"), nullable=False)
+    user_id = Column(BIGINT, ForeignKey("user.id"), nullable=False, index=True)
+    order_id = Column(BIGINT, ForeignKey("order.id"), nullable=False, index=True)
     code = Column(VARCHAR, nullable=False)
     type = Column(SMALLINT, nullable=False, default=0)
     mode = Column(SMALLINT, nullable=False, default=0)

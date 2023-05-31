@@ -6,7 +6,7 @@ class Category(Base):
     __tablename__ = "category"
 
     id = Column(BIGINT, nullable=False, primary_key=True)
-    parent_id = Column(BIGINT, ForeignKey("category.id"), nullable=True)
+    parent_id = Column(BIGINT, ForeignKey("category.id"), nullable=True, index=True)
     title = Column(VARCHAR, nullable=False)
     meta_title = Column(VARCHAR, nullable=True, default=None)
     slug = Column(VARCHAR, nullable=False)

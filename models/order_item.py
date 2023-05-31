@@ -8,9 +8,9 @@ class OrderItem(Base):
     __tablename__ = 'order_item'
 
     id = Column(BIGINT, nullable=False, primary_key=True)
-    product_id = Column(BIGINT, ForeignKey("product.id"), nullable=False)
-    item_id = Column(BIGINT, ForeignKey("item.id"), nullable=False)
-    order_id = Column(BIGINT, ForeignKey("order.id"), nullable=False)
+    product_id = Column(BIGINT, ForeignKey("product.id"), nullable=False, index=True)
+    item_id = Column(BIGINT, ForeignKey("item.id"), nullable=False, index=True)
+    order_id = Column(BIGINT, ForeignKey("order.id"), nullable=False, index=True)
     sku = Column(VARCHAR, nullable=False)
     price = Column(FLOAT, nullable=False, default=0)
     discount = Column(FLOAT, nullable=False, default=0)
