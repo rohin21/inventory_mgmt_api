@@ -28,3 +28,12 @@ class ItemUpdate(ItemCreate):
 class ItemDelete(BaseModel):
 
     id: int
+
+
+class ItemDisplay(ItemCreate):
+
+    id: int
+    created_by: int
+    updated_by: int
+    created_at: datetime
+    updated_at: Optional[datetime] = None
