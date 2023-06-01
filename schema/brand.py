@@ -6,12 +6,14 @@ from typing import Optional
 class BrandCreate(BaseModel):
 
     title: str
-    summary: Optional[str] = None
-    content: Optional[str] = None
+    summary: Optional[str] = ""
+    content: Optional[str] = ""
 
 
 class BrandUpdate(BrandCreate):
     id: int
+    summary: Optional[str]
+    content: Optional[str]
 
 
 class BrandDelete(BaseModel):
@@ -22,3 +24,6 @@ class BrandDisplay(BrandCreate):
     id: int
     created_at: datetime
     updated_at: Optional[datetime] = None
+
+    class Config:
+        orm_mode = True

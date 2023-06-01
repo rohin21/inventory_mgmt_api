@@ -21,7 +21,6 @@ class UserDisplay(BaseModel):
 
 class UserCreate(BaseModel):
 
-    id: int
     role_id: int
     first_name: Optional[str]
     middle_name: Optional[str]

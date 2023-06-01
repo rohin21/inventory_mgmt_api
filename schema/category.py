@@ -4,11 +4,11 @@ from typing import Optional
 
 class CategoryCreate(BaseModel):
 
-    parent_id: Optional[int] = None
+    parent_id: Optional[int]
     title: str
-    meta_title: Optional[str] = None
+    meta_title: Optional[str]
     slug: str
-    content: Optional[str] = None
+    content: Optional[str]
 
 
 class CategoryUpdate(CategoryCreate):

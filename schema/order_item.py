@@ -9,9 +9,9 @@ class OrderItemCreate(BaseModel):
     item_id: int
     order_id: int
     sku: str
-    price: float = 0
-    discount: float = 0
-    quantity: int = 0
+    price: float
+    discount: float
+    quantity: int
     content: Optional[str]
 
 
